@@ -1,15 +1,24 @@
-class Person
+require_relative 'nameable'
+require_relative 'capitalize_decorator'
+require_relative 'trimmer_decorator'
+class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id
 
   def initialize(age, name = 'Unknown', parent_permission: true)
+    super()
     @id = 0
     @name = name
     @age = age
     @parent_permission = parent_permission
   end
 
+  def correct_name
+    @name
+  end
+
   # rubocop:disable Naming/PredicateName
+
   def is_of_age?
     @age >= 18
   end
@@ -20,3 +29,6 @@ class Person
   end
   private :is_of_age?
 end
+
+person = Person.new(22, 'maximilianus')
+person.correct_name
