@@ -14,6 +14,10 @@ class Person < Nameable
     @rentals = []
   end
 
+  def add_rental(rental)
+    @rentals << rental
+  end
+
   def correct_name
     @name
   end

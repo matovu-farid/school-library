@@ -8,6 +8,11 @@ class Student < Person
     classroom.students << self
   end
 
+  def belongs_to(classroom)
+    @classroom = classroom
+    classroom.students << self
+  end
+
   def play_hooks
     '¯\\(ツ)/¯'
   end
