@@ -8,5 +8,6 @@ def classroom
 
   def addStudent(student)
     @students << student
+    student.classroom = self
   end
 end
