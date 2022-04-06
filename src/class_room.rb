@@ -1,4 +1,4 @@
-def classroom
+class Classroom
   attr_accessor :label
 
   def initialize(label)
@@ -6,7 +6,7 @@ def classroom
     @students = []
   end
 
-  def addStudent(student)
+  def add_student(student)
     @students << student
     student.classroom = self
   end
