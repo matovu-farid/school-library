@@ -35,7 +35,7 @@ end
 def main
   Main.new.run
 rescue StandardError
-  Main.new.run
+  puts "Wrong value entered"
 end
 
 main
