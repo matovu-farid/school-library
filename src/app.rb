@@ -10,7 +10,6 @@ class App
     @books = []
     @rentals = []
     @list = List.new
-    @default = Default.new
   end
 
   def list_books
