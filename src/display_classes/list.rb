@@ -1,6 +1,5 @@
 class List
   def display_rentals(list)
-
     list.each do |rental|
       date = rental.date
       book = rental.book
