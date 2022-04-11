@@ -11,8 +11,7 @@ class Permission
     when 'y'
       true
     else
-      default = Default.new
-      default.wrong_input
+      Default.new
     end
   end
 end

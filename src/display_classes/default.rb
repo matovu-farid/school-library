@@ -14,9 +14,4 @@ Please choose an option by entering a number:
     )
     gets.chomp.downcase
   end
-
-  def wrong_input
-    puts 'Wrong input'
-    choose
-  end
 end
