@@ -12,7 +12,6 @@ class Permission
       true
     else
       default = Default.new
-      default.wrong_input
     end
   end
 end
