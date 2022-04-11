@@ -21,10 +21,10 @@ Th app records what books are in the library and who borrows them. The app that 
 
 To get the content of this project locally you need to run this command in your terminal:
 ```
-- git clone your https://github.com/matovu-farid/school-library.git
-- cd project school-library
-- bundle install
-- ruby main.rb
+git clone your https://github.com/matovu-farid/school-library.git
+cd project school-library
+bundle install
+ruby main.rb
 ```
 
 ## Authors
