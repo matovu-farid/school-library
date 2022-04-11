@@ -11,7 +11,7 @@ class Permission
     when 'y'
       true
     else
-      default = Default.new
+      Default.new
     end
   end
 end
