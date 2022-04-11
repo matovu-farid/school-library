@@ -20,7 +20,7 @@ Th app records what books are in the library and who borrows them. The app that 
 ## Getting Started
 
 To get the content of this project locally you need to run this command in your terminal:
-```
+``` bash
 git clone your https://github.com/matovu-farid/school-library.git
 cd project school-library
 bundle install
