@@ -3,29 +3,41 @@ require_relative './src/case_statement'
 require_relative './src/display_classes/default'
 require_relative './src/book'
 require_relative './src/person'
+require_relative './src/rental'
 require 'json'
+
+def save(array, filename)
+  serialized = []
+  array.each do |obj|
+    serialized.push(obj)
+  end
+  File.write(filename, JSON.generate(serialized))
+end
+
+def fetch(filename, type)
+  if File.exist?(filename)
+    (JSON.parse File.read(filename))
+      .map { |json| type.from_json(json) }
+  else
+    []
+  end
+end
 
 def main
   choice = ''
-  books = (JSON.parse File.read('books.json')).map { |json| Book.from_json(json) }
-  people = (JSON.parse File.read('people.json')).map { |json| Person.from_json(json) }
 
-  app = App.new(books: books, people: people, rentals: [])
+  books = fetch('books.json', Book)
+  people = fetch('people.json', Person)
+  rentals = fetch('rentals.json', Rental)
+
+  app = App.new(books: books, people: people, rentals: rentals)
   until choice == '7'
     choice = Default.new.choose
     CaseStatement.new(choice, app).run
   end
-  serialized_books = []
-  app.books.each do |book|
-    serialized_books.push(book)  
-  end
-  serialized_people = []
-  app.people.each do |person|
-    serialized_people.push(person)  
-  end
-
-  File.write('books.json', JSON.generate(serialized_books))
-  File.write('people.json', JSON.generate(serialized_people))
+  save(app.books, 'books.json')
+  save(app.people, 'people.json')
+  save(app.rentals, 'rentals.json')
 end
 
 main
