@@ -5,11 +5,14 @@ require_relative './display_classes/list'
 require_relative './display_classes/create_book'
 require_relative './display_classes/create_rental'
 class App
-  def initialize
-    @people = []
-    @books = []
-    @rentals = []
+  attr_accessor :books, :rentals, :people
+
+  def initialize(people:, books:, rentals:)
+    @people = people
+    @books = books
+    @rentals = rentals
     @list = List.new
+    print books
   end
 
   def list_books
