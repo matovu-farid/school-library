@@ -1,12 +1,12 @@
 require_relative 'src/app'
 require_relative './src/case_statement'
 require_relative './src/display_classes/default'
-require_relative './src/book.rb'
+require_relative './src/book'
 require 'json'
 
 def main
   choice = ''
-  books = (JSON.parse File.read('books.json')).map {|json| Book.from_json(json)}
+  books = (JSON.parse File.read('books.json')).map { |json| Book.from_json(json) }
 
   app = App.new(books: books, people: [], rentals: [])
   until choice == '7'
