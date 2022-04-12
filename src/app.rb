@@ -12,7 +12,6 @@ class App
     @books = books
     @rentals = rentals
     @list = List.new
-    print books
   end
 
   def list_books

@@ -22,6 +22,21 @@ class Person < Nameable
     @name
   end
 
+  def to_json(*_args)
+    JSON.generate({
+                    name: @name,
+                    age: @age,
+                    parent_permission: @parent_permission,
+                    rentals: @rentals
+                  })
+  end
+
+  def self.from_json(data)
+   person = new(data['name'], data['age'], parent_permission: data['parent_permission'])
+    person.add_rental( data['rentals'])
+   person 
+  end
+
   # rubocop:disable Naming/PredicateName
 
   def is_of_age?

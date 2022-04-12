@@ -17,7 +17,9 @@ class Book
   end
 
   def self.from_json(data)
-    new(data['title'], data['author'])
+  book =  new(data['title'], data['author'])
+  book.add_rental( data['rentals'])
+  book
   end
 
   def add_rental(rental)
