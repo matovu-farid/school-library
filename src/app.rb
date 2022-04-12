@@ -38,7 +38,7 @@ class App
   end
 
   def list_rentals
-    rentals = FetchRental.new(@people).get
+    rentals = FetchRental.new(@rentals).get
     @list.display_rentals(rentals)
   end
 end
