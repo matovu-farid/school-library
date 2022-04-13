@@ -15,5 +15,4 @@ describe Rental do
   it 'should create a JSON object' do
     expect(@rental).to have_attributes(date: 'Date')
   end
- 
 end

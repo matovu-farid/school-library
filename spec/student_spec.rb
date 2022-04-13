@@ -6,8 +6,8 @@ describe Student do
   before :each do
     classroom = double('classroom')
     allow(classroom).to receive(:add_student).and_return(3)
-    @student = Student.new(classroom,'Age','Name', parent_permission: false,id:300)
-    @student_obj = { 'id' => 300, 'name' => 'Name', 'age'=>'Age','parent_permission' => false }
+    @student = Student.new(classroom, 'Age', 'Name', parent_permission: false, id: 300)
+    @student_obj = { 'id' => 300, 'name' => 'Name', 'age' => 'Age', 'parent_permission' => false }
   end
   it 'should create a JSON object' do
     json = @student.to_json

@@ -3,7 +3,7 @@ require_relative 'tests_helper'
 describe Corrector do
   before :each do
     nameable = double('nameable')
-    allow(nameable).to receive(:correct_name){'name'}
+    allow(nameable).to receive(:correct_name) { 'name' }
     @corrector = Corrector.new nameable
   end
 

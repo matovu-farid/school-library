@@ -4,8 +4,8 @@ require 'json'
 
 describe Teacher do
   before :each do
-    @teacher = Teacher.new('Specialization', 'Age','Name', parent_permission: false,id:300)
-    @teacher_obj = { 'id' => 300, 'name' => 'Name', 'age'=>'Age','parent_permission' => false }
+    @teacher = Teacher.new('Specialization', 'Age', 'Name', parent_permission: false, id: 300)
+    @teacher_obj = { 'id' => 300, 'name' => 'Name', 'age' => 'Age', 'parent_permission' => false }
   end
 
   it 'should create a JSON object' do
