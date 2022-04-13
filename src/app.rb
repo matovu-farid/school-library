@@ -5,10 +5,12 @@ require_relative './display_classes/list'
 require_relative './display_classes/create_book'
 require_relative './display_classes/create_rental'
 class App
-  def initialize
-    @people = []
-    @books = []
-    @rentals = []
+  attr_accessor :books, :rentals, :people
+
+  def initialize(people:, books:, rentals:)
+    @people = people
+    @books = books
+    @rentals = rentals
     @list = List.new
   end
 
@@ -36,7 +38,7 @@ class App
   end
 
   def list_rentals
-    rentals = FetchRental.new(@people).get
+    rentals = FetchRental.new(@rentals).get
     @list.display_rentals(rentals)
   end
 end

@@ -1,3 +1,5 @@
+require 'json'
+require_relative './rental'
 class Book
   attr_accessor :title, :author, :rentals
 
@@ -5,6 +7,17 @@ class Book
     @title = title
     @author = author
     @rentals = []
+  end
+
+  def to_json(*_args)
+    JSON.generate({
+                    title: @title,
+                    author: @author
+                  })
+  end
+
+  def self.from_json(data)
+    new(data['title'], data['author'])
   end
 
   def add_rental(rental)

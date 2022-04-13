@@ -8,10 +8,8 @@ class Permission
     case @input
     when 'n'
       false
-    when 'y'
-      true
     else
-      Default.new
+      true
     end
   end
 end

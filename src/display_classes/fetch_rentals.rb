@@ -1,18 +1,14 @@
 class FetchRental
-  def initialize(people)
-    @people = people
+  def initialize(rentals)
+    @rentals = rentals
   end
 
   def get
     print 'ID of person: '
     id = gets.chomp.to_i
-    rentals = []
-    @people.each do |person|
-      if person.id == id
-        rentals = person.rentals
-        break
-      end
+
+    @rentals.select do |rental|
+      rental.person.id == id
     end
-    rentals
   end
 end

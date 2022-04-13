@@ -1,13 +1,14 @@
 require_relative 'nameable'
 require_relative 'capitalize_decorator'
 require_relative 'trimmer_decorator'
+require_relative './rental'
 class Person < Nameable
   attr_accessor :name, :age, :rentals
   attr_reader :id
 
-  def initialize(age, name = 'Unknown', parent_permission: true)
+  def initialize(age, name = 'Unknown', parent_permission: true, id: rand(1000))
     super()
-    @id = rand(1000)
+    @id = id
     @name = name
     @age = age
     @parent_permission = parent_permission
@@ -20,6 +21,21 @@ class Person < Nameable
 
   def correct_name
     @name
+  end
+
+  def to_json(*_args)
+    JSON.generate({
+                    id: @id,
+                    name: @name,
+                    age: @age,
+                    parent_permission: @parent_permission
+                  })
+  end
+
+  def self.from_json(data)
+    new(data['name'], data['age'],
+        parent_permission: data['parent_permission'],
+        id: data['id'])
   end
 
   # rubocop:disable Naming/PredicateName
