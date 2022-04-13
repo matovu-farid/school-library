@@ -33,7 +33,7 @@ class Person < Nameable
   end
 
   def self.from_json(data)
-    new(data['name'], data['age'],
+    new(data['age'], data['name'],
         parent_permission: data['parent_permission'],
         id: data['id'])
   end
