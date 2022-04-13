@@ -27,6 +27,11 @@ bundle install
 ruby main.rb
 ```
 
+To run tests:
+```
+rspec spec
+```
+
 ## Authors
 
 👤 **Matovu Farid Nkoba**
