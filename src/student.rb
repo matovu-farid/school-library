@@ -8,6 +8,10 @@ class Student < Person
     classroom.students << self
   end
 
+  def add_classroom(classroom)
+    @classroom = classroom
+  end
+
   def belongs_to(classroom)
     @classroom = classroom
     classroom.students << self
