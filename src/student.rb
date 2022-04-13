@@ -2,10 +2,10 @@ require_relative 'person'
 class Student < Person
   attr_accessor :classroom
 
-  def initialize(classroom, age, name, parent_permission: true)
-    super(age, name, parent_permission: parent_permission)
+  def initialize(classroom, age, name, parent_permission: true, id: rand(1000))
+    super(age, name, parent_permission: parent_permission,id:id)
     @classroom = classroom
-    classroom.students << self
+    classroom.add_student self
   end
 
   def add_classroom(classroom)
