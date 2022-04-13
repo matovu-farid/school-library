@@ -1,5 +1,1 @@
-[
-  { "id": 693, "name": 18, "age": "farid", "parent_permission": true },
-  { "id": 640, "name": 45, "age": "Mary", "parent_permission": null },
-  { "id": 293, "name": "Ray", "age": 56, "parent_permission": false }
-]
+[{"id":693,"name":18,"age":"farid","parent_permission":true},{"id":640,"name":45,"age":"Mary","parent_permission":null},{"id":293,"name":"Ray","age":56,"parent_permission":false},{"id":615,"name":"rexy","age":34,"parent_permission":null}]
